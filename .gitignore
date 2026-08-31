@@ -1,0 +1,43 @@
+# Python caches and local tooling output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Archives and generated packages should not enter the Skill repository by accident
+*.zip
+*.7z
+*.rar
+*.unitypackage
+
+# Unity projects and generated diagnostic folders do not belong in this Skill repo
+Library/
+Temp/
+Logs/
+Obj/
+Build/
+Builds/
+UserSettings/
+ProjectSettings/
+Packages/
+
+# Local reports, credentials, and machine-specific profiles
+*.local.md
+*.secret
+*.secrets
+*.token
+*.cookie
+*.pem
+*.p12
+*.key
+config.local.toml
+CodexProjectProfile.md
+TOOLCHAIN_PROFILE.md
+AvatarAudit.md
