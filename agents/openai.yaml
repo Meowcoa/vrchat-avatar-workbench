@@ -1,0 +1,7 @@
+interface:
+  display_name: "VRChat Avatar Workbench"
+  short_description: "带新手完成 VRChat Avatar 改模"
+  default_prompt: "使用 $vrchat-avatar-workbench 带我从资料查询、MCP 和本地核查开始，逐项完成并验证 VRChat Avatar 改模；如我指定插件更新，再做备份和功能回归。"
+
+policy:
+  allow_implicit_invocation: true
