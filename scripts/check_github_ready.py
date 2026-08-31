@@ -60,14 +60,17 @@ SUSPICIOUS_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
 
 MACHINE_PATH_PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
     (
-        "user_absolute_path",
-        re.compile(r"(?i)\b[A-Z]:\\Users\\(?!<user>)[^\s`\"'<>]+"),
+        "windows_absolute_path",
+        re.compile(
+            r"(?i)(?<![A-Za-z0-9])(?:"
+            r"[A-Z]:\\(?=[^\\/\s`\"'<>[\]{}])"
+            r"|\\\\(?=[^\\/\s`\"'<>[\]{}]+\\))"
+            r"[^\s`\"'<>]+"
+        ),
     ),
     (
-        "private_project_path",
-        re.compile(
-            r"(?i)\b[A-Z]:\\(?:sucai|下载|BaiduNetdiskDownload|tengxun|xwechat_files|CodexSandboxOffline)\\[^\s`\"'<>]+"
-        ),
+        "unix_personal_path",
+        re.compile(r"(?i)(?<![A-Za-z0-9])/(?:Users|home|mnt)/[^\s`\"'<>]+"),
     ),
 )
 
